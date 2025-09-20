@@ -1,0 +1,20 @@
+package com.pm.patientservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pm.patientservice.repository.PatientRepository;
+
+@Service
+public class PatientService {
+
+
+    private PatientRepository patientRepository;
+
+
+
+    public PatientService(PatientRepository patientRepository){
+        this.patientRepository = patientRepository;
+    }
+
+}
