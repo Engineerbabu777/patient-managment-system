@@ -1,8 +1,10 @@
 package com.pm.patientservice.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import com.pm.patientservice.model.Patient;
 import com.pm.patientservice.repository.PatientRepository;
 
 @Service
@@ -15,6 +17,10 @@ public class PatientService {
 
     public PatientService(PatientRepository patientRepository){
         this.patientRepository = patientRepository;
+    }
+
+    public List<PatientResponseDTO> getAllPatients(){
+        return patientRepository.findAll();
     }
 
 }
