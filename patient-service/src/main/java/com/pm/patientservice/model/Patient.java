@@ -12,12 +12,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-public class Patient{
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-
 
     @NotNull
     private String name;
@@ -35,7 +34,6 @@ public class Patient{
 
     @NotNull
     private LocalDate registeredDate;
-
 
     public UUID getId() {
         return id;
@@ -84,6 +82,5 @@ public class Patient{
     public void setRegisteredDate(LocalDate registeredDate) {
         this.registeredDate = registeredDate;
     }
-
 
 }
