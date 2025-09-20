@@ -1,0 +1,73 @@
+# =====================
+# Java
+# =====================
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# =====================
+# Maven / Gradle
+# =====================
+/target/
+/build/
+/out/
+/!.mvn/wrapper/maven-wrapper.jar
+.gradle/
+/gradle/
+/settings.gradle
+/build.gradle
+/build.gradle.kts
+/.gradle/
+
+# =====================
+# Spring Boot
+# =====================
+/spring-boot-devtools.properties
+/bootJar/
+!src/main/resources/
+
+# =====================
+# IDEs
+# =====================
+# IntelliJ IDEA
+/.idea/
+/*.iml
+/out/
+/*.iws
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+/.apt_generated/
+/.factorypath
+
+# VS Code
+/.vscode/
+
+# =====================
+# Logs and temp files
+# =====================
+*.log
+*.tmp
+*.temp
+*.swp
+*.DS_Store
+*.class
+
+# =====================
+# Environment variables / secrets
+# =====================
+.env
+*.properties
+*.yml
+!.sample.env
+!.application.properties
+!.application.yml
+
+# =====================
+# Misc
+# =====================
+/node_modules/
