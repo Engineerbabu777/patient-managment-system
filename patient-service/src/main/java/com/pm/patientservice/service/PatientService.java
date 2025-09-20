@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.pm.patientservice.dto.PatientResponseDTO;
 import com.pm.patientservice.model.Patient;
 import com.pm.patientservice.repository.PatientRepository;
 
@@ -20,7 +21,9 @@ public class PatientService {
     }
 
     public List<PatientResponseDTO> getAllPatients(){
-        return patientRepository.findAll();
+        List<Patient> patients = patientRepository.findAll();
+
+        return [];
     }
 
 }
