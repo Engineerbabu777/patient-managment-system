@@ -3,13 +3,18 @@ package com.pm.patientservice.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pm.patientservice.dto.PatientRequestDto;
 import com.pm.patientservice.dto.PatientResponseDTO;
+import com.pm.patientservice.mapper.PatientMapper;
 import com.pm.patientservice.service.PatientService;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -26,6 +31,12 @@ public class PatientController {
     public ResponseEntity<List<PatientResponseDTO>> getAllPatients() {
         return ResponseEntity.ok().body(patientService.getAllPatients());
     }
+
+    @PostMapping("")
+    public ResponseEntity<PatientResponseDTO> createPatient(PatientRequestDto patientRequestDto) {
+        return ResponseEntity.ok().body(patientService.createPatient(patientRequestDto));
+    }
+  
     
 
     
