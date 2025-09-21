@@ -22,7 +22,7 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<List<PatientResponseDTO>> getAllPatients() {
         return ResponseEntity.ok().body(patientService.getAllPatients());
     }
