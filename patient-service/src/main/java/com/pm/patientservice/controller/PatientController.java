@@ -8,6 +8,8 @@ import com.pm.patientservice.dto.PatientResponseDTO;
 import com.pm.patientservice.mapper.PatientMapper;
 import com.pm.patientservice.service.PatientService;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -33,7 +35,7 @@ public class PatientController {
     }
 
     @PostMapping("")
-    public ResponseEntity<PatientResponseDTO> createPatient(PatientRequestDto patientRequestDto) {
+    public ResponseEntity<PatientResponseDTO> createPatient(@Valid @RequestBody PatientRequestDto patientRequestDto) {
         return ResponseEntity.ok().body(patientService.createPatient(patientRequestDto));
     }
   

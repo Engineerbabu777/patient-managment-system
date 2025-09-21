@@ -21,7 +21,7 @@ public class PatientRequestDto {
     private String address;
 
     @NotBlank(message = "Registered date is required")
-    private String registereDdate;
+    private String registeredDate;
 
     public String getEmail() {
         return email;
@@ -55,12 +55,12 @@ public class PatientRequestDto {
         this.address = address;
     }
 
-    public String getRegistereDdate() {
-        return registereDdate;
+    public String getRegisteredDate() {
+        return registeredDate;
     }
 
-    public void setRegistereDdate(String registereDdate) {
-        this.registereDdate = registereDdate;
+    public void setRegisteredDate(String registeredDate) {
+        this.registeredDate = registeredDate;
     }
 
 }
