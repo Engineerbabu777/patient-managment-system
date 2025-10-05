@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pm.patientservice.dto.PatientRequestDto;
 import com.pm.patientservice.dto.PatientResponseDTO;
-import com.pm.patientservice.mapper.PatientMapper;
 import com.pm.patientservice.service.PatientService;
 
 import jakarta.validation.Valid;
