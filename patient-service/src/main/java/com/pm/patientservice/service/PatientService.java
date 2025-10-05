@@ -38,12 +38,14 @@ public class PatientService {
         return PatientMapper.toDTO(newPatient);
     }
 
-    public PatientResponseDTO updatePatient(UUID id, PatientRequestDto patientRequestDTO){
-        Patient patient = patientRepository.findById(id).orElseThrow(() -> new PatientNotFoundException("Patient not found with ID ===> "+id));
+    public PatientResponseDTO updatePatient(UUID id, PatientRequestDto patientRequestDTO) {
+        Patient patient = patientRepository.findById(id)
+                .orElseThrow(() -> new PatientNotFoundException("Patient not found with ID ===> " + id));
 
-        return  PatientMapper.toDTO(patient);
+        // UPDATE THE USER :--
 
-        
+        return PatientMapper.toDTO(patient);
+
     }
 
 }
