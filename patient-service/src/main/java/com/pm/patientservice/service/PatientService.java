@@ -1,5 +1,6 @@
 package com.pm.patientservice.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,9 +43,18 @@ public class PatientService {
         Patient patient = patientRepository.findById(id)
                 .orElseThrow(() -> new PatientNotFoundException("Patient not found with ID ===> " + id));
 
-        // UPDATE THE USER :--
+        if (patientRepository.existsByEmail(patientRequestDTO.getEmail())) {
+            throw new EmailAlreadyExistsException(
+                    "A patient of this email already exists ===> " + patientRequestDTO.getEmail());
+        }
 
-        return PatientMapper.toDTO(patient);
+        patient.setName(patientRequestDTO.getName());
+        patient.setAddress(patientRequestDTO.getAddress());
+        patient.setDateOfBirth(LocalDate.parse(patientRequestDTO.getDateOfBirth()));
+
+        Patient updatedPatient = patientRepository.save(patient);
+
+        return PatientMapper.toDTO(updatedPatient);
 
     }
 
