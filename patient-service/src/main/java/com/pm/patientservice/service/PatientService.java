@@ -1,7 +1,9 @@
 package com.pm.patientservice.service;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -79,7 +81,7 @@ public class PatientService {
 
     }
 
-    public PatientResponseDTO deletePatient(String id) {
+    public Map<String,String> deletePatient(String id) {
 
         UUID patientID;
         try {
@@ -94,7 +96,13 @@ public class PatientService {
 
         patientRepository.deleteById(patientID);
 
-        return PatientMapper.toDTO(patient);
+        Map<String,String> response = new HashMap<>();
+
+        response.put("message", "Patient has been deleted successfully");
+        response.put("Patient ID", patient.getId().toString());
+
+
+        return response;
     }
 
 }

@@ -10,7 +10,7 @@ import com.pm.patientservice.service.PatientService;
 import jakarta.validation.Valid;
 
 import java.util.List;
-import java.util.UUID;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,7 +49,7 @@ public class PatientController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<PatientResponseDTO> deletePatientController(@PathVariable String id) {
+    public ResponseEntity<Map<String,String>> deletePatientController(@PathVariable String id) {
         return ResponseEntity.ok().body(patientService.deletePatient(id));
     }
 
