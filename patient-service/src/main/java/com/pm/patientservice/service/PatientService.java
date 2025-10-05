@@ -40,8 +40,16 @@ public class PatientService {
         return PatientMapper.toDTO(newPatient);
     }
 
-    public PatientResponseDTO updatePatient(UUID id, PatientUpdateRequestDTO patientRequestDTO) {
-        Patient patient = patientRepository.findById(id)
+    public PatientResponseDTO updatePatient(String id, PatientUpdateRequestDTO patientRequestDTO) {
+
+        UUID patientID;
+        try {
+            patientID = UUID.fromString(id);
+        } catch (Exception e) {
+            throw new InavlidUUIDException("Invlaid UUID format ====>>"+id);
+        }
+
+        Patient patient = patientRepository.findById(patientID)
                 .orElseThrow(() -> new PatientNotFoundException("Patient not found with ID ===> " + id));
 
         if (patientRepository.existsByEmail(patientRequestDTO.getEmail())) {
