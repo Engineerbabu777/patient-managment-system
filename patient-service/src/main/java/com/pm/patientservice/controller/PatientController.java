@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,15 +22,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pm.patientservice.dto.PatientUpdateRequestDTO;
 
-
-
 @RestController
 @RequestMapping("/patients")
 public class PatientController {
 
     private final PatientService patientService;
 
-    public PatientController(PatientService patientService){
+    public PatientController(PatientService patientService) {
         this.patientService = patientService;
     }
 
@@ -43,10 +42,15 @@ public class PatientController {
         return ResponseEntity.ok().body(patientService.createPatient(patientRequestDto));
     }
 
-    @PutMapping("/{id}") 
-    public ResponseEntity<PatientResponseDTO> updatePatient(@Valid @RequestBody PatientUpdateRequestDTO patientRequestDTO, @PathVariable String id){
+    @PutMapping("/{id}")
+    public ResponseEntity<PatientResponseDTO> updatePatient(
+            @Valid @RequestBody PatientUpdateRequestDTO patientRequestDTO, @PathVariable String id) {
         return ResponseEntity.ok().body(patientService.updatePatient(id, patientRequestDTO));
     }
-    
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<PatientResponseDTO> deletePatientController(@PathVariable String id) {
+        return ResponseEntity.ok().body(patientService.deletePatient(id));
+    }
 
 }

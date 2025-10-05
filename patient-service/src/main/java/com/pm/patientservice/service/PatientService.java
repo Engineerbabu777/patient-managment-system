@@ -46,9 +46,9 @@ public class PatientService {
         UUID patientID;
         try {
             patientID = UUID.fromString(id);
-            
+
         } catch (Exception e) {
-            throw new InavlidUUIDException("Invlaid UUID format ====>>"+id);
+            throw new InavlidUUIDException("Invlaid UUID format ====>>" + id);
         }
 
         Patient patient = patientRepository.findById(patientID)
@@ -77,6 +77,24 @@ public class PatientService {
 
         return PatientMapper.toDTO(updatedPatient);
 
+    }
+
+    public PatientResponseDTO deletePatient(String id) {
+
+        UUID patientID;
+        try {
+            patientID = UUID.fromString(id);
+
+        } catch (Exception e) {
+            throw new InavlidUUIDException("Invlaid UUID format ====>>" + id);
+        }
+
+        Patient patient = patientRepository.findById(patientID)
+                .orElseThrow(() -> new PatientNotFoundException("Patient not found with ID ===> " + id));
+
+        patientRepository.deleteById(patientID);
+
+        return PatientMapper.toDTO(patient);
     }
 
 }
