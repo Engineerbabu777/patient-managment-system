@@ -10,6 +10,7 @@ import com.pm.patientservice.dto.PatientRequestDto;
 import com.pm.patientservice.dto.PatientResponseDTO;
 import com.pm.patientservice.dto.PatientUpdateRequestDTO;
 import com.pm.patientservice.exception.EmailAlreadyExistsException;
+import com.pm.patientservice.exception.InavlidUUIDException;
 import com.pm.patientservice.exception.PatientNotFoundException;
 import com.pm.patientservice.mapper.PatientMapper;
 import com.pm.patientservice.model.Patient;
@@ -45,6 +46,7 @@ public class PatientService {
         UUID patientID;
         try {
             patientID = UUID.fromString(id);
+            
         } catch (Exception e) {
             throw new InavlidUUIDException("Invlaid UUID format ====>>"+id);
         }

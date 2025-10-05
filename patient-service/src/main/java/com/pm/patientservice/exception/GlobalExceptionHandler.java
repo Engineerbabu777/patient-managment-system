@@ -52,4 +52,14 @@ public class GlobalExceptionHandler {
 
     }
 
+    @ExceptionHandler(InavlidUUIDException.class)
+    public ResponseEntity<Map<String,String>> handleInvalidUUIDException(InavlidUUIDException ex){
+         log.warn("Invalid Patient ID {}",ex.getMessage());
+        Map<String, String> errors = new HashMap<>();
+
+        errors.put("message", "Invalid Patient ID!");
+
+        return ResponseEntity.badRequest().body(errors);
+    }
+
 }
