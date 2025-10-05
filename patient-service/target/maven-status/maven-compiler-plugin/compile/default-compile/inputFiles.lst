@@ -2,8 +2,11 @@
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/controller/PatientController.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/dto/PatientRequestDto.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/dto/PatientResponseDTO.java
+/Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/dto/PatientUpdateRequestDTO.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/exception/EmailAlreadyExistsException.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/exception/GlobalExceptionHandler.java
+/Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/exception/InavlidUUIDException.java
+/Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/exception/PatientNotFoundException.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/mapper/PatientMapper.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/model/Patient.java
 /Users/engineerawais/java-backend-projects/patient-management/patient-service/src/main/java/com/pm/patientservice/repository/PatientRepository.java
