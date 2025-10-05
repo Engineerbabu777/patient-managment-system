@@ -1,8 +1,17 @@
 package com.pm.patientservice.dto;
 
+import jakarta.validation.constraints.Email;
+
 public class PatientUpdateRequestDTO {
 
     private String name;
+
+    @Email(message = "Email should be valid")
+    private String email;
+
+    private String dateOfBirth;
+
+    private String address;
 
     public String getName() {
         return name;
@@ -35,9 +44,5 @@ public class PatientUpdateRequestDTO {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    private String email;
-    private String dateOfBirth;
-    private String address;
 
 }
