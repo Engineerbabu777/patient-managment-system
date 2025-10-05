@@ -11,6 +11,10 @@
 	<groupId>com.pm</groupId>
 	<artifactId>patient-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>demo</module>
+	</modules>
 	<name>patient-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
